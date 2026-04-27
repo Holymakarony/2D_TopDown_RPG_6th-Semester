@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 49871565894870352}
   - component: {fileID: 8572565956482686458}
   - component: {fileID: 5303741228354064265}
+  - component: {fileID: 2537280196916226567}
   - component: {fileID: 3029979910123265935}
   - component: {fileID: 3611916865128783025}
   - component: {fileID: 5136552036212721245}
@@ -77,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   startingHealth: 3
+  deathVFXPrefab: {fileID: 5829997151769627827, guid: e7a9e16c7470f774fa65cc12f90b8f49, type: 3}
 --- !u!114 &5303741228354064265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +91,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91fe304554deed44bf2a59dfb8bdb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knockback
+  knockBackTime: 0.2
+--- !u!114 &2537280196916226567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950113544002557922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776961dd21436aa47854914743fac499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Flash
+  whiteFlashMat: {fileID: 2100000, guid: c01864960c688d143926adf8e8ef262c, type: 2}
+  restoreDefaultMatTime: 0.1
 --- !u!212 &3029979910123265935
 SpriteRenderer:
   m_ObjectHideFlags: 0
