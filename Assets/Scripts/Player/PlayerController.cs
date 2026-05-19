@@ -1,10 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public bool FacingLeft { get { return facingLeft; } }
-    public static PlayerController Instance;
     
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashSpeed = 4f;
@@ -22,9 +21,10 @@ public class PlayerController : MonoBehaviour
     private bool facingLeft = false;
     private bool isDashing = false;
 
-    private void Awake() 
-    {
-        Instance = this; 
+    protected override void Awake() 
+    { 
+        base.Awake();
+
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        playerControls?.Disable(); // ? nach playerControls macht das es nur ausgeführt wird wenn es die Instance gibt, sonst wird es übersprungen :)
     }
 
     // good for player inputs

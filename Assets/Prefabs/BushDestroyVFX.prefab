@@ -13,6 +13,42 @@ PrefabInstance:
       value: BushDestroyVFX
       objectReference: {fileID: 0}
     - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: -3.1415925
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.x.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.y.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.curve.minScalar
+      value: 3.1415925
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: RotationModule.curve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -23,6 +59,14 @@ PrefabInstance:
     - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 992674414639322844, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1473138480177797912, guid: 72d670248d4fdda46a38f9157e83f94c, type: 3}
       propertyPath: m_LocalPosition.x
