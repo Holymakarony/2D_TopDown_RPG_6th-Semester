@@ -14,9 +14,12 @@ GameObject:
   - component: {fileID: 8572565956482686458}
   - component: {fileID: 5303741228354064265}
   - component: {fileID: 2537280196916226567}
+  - component: {fileID: 7019698209372041692}
   - component: {fileID: 3029979910123265935}
   - component: {fileID: 3611916865128783025}
   - component: {fileID: 5136552036212721245}
+  - component: {fileID: 6962871577371521723}
+  - component: {fileID: 3221791748183984020}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -52,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eb97bfa9566304bb84271fcdc28590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
+  roamChangeDirFloat: 2
 --- !u!114 &49871565894870352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   startingHealth: 3
   deathVFXPrefab: {fileID: 5829997151769627827, guid: e7a9e16c7470f774fa65cc12f90b8f49, type: 3}
+  knockBackThrust: 15
 --- !u!114 &5303741228354064265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +111,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Flash
   whiteFlashMat: {fileID: 2100000, guid: c01864960c688d143926adf8e8ef262c, type: 2}
   restoreDefaultMatTime: 0.1
+--- !u!114 &7019698209372041692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950113544002557922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80f1cf573c72d646aba07a8815be660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomIdleAnimation
 --- !u!212 &3029979910123265935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -228,6 +245,40 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0000025297359, y: -0.029040817}
   m_Size: {x: 0.9675389, y: 0.7158789}
   m_Direction: 1
+--- !u!95 &6962871577371521723
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950113544002557922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42a6ff1db5687ca42ba6684fe515e865, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &3221791748183984020
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950113544002557922}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8218012820418932282
 GameObject:
   m_ObjectHideFlags: 0

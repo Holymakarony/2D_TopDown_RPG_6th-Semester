@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5734849627017977629}
   - component: {fileID: 1892170470219899995}
+  - component: {fileID: 8307057290816455749}
   - component: {fileID: 4836057818407642056}
   - component: {fileID: 7359184638058930270}
   - component: {fileID: 5685878667205503740}
@@ -49,6 +50,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransparentDetection
   transparencyAmount: 0.6
   fadeTime: 0.3
+--- !u!114 &8307057290816455749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753365693944477299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8950eedd45c27444908b41b91156f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Indestructable
 --- !u!212 &4836057818407642056
 SpriteRenderer:
   m_ObjectHideFlags: 0
