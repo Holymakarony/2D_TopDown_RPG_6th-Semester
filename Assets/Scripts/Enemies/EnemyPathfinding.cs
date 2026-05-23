@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class EnemyPathfinding : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class EnemyPathfinding : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        else
+        else if (moveDir.x > 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -35,5 +36,10 @@ public class EnemyPathfinding : MonoBehaviour
     public void MoveTo(Vector2 targetPosition)
     {
         moveDir = targetPosition;
+    }
+
+    public void StopMoving()
+    {
+        moveDir = Vector3.zero;
     }
 }

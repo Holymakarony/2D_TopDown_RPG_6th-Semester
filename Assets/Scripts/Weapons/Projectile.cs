@@ -4,8 +4,9 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 22f;
     [SerializeField] private GameObject particleOnHitPrefabVFX;
+    [SerializeField] private bool isEnemyProjectile = false;
+    [SerializeField]private float projectileRange = 10f;
 
-    private WeaponInfo weaponInfo;
     private Vector3 startPosition;
 
     void Start()
@@ -19,9 +20,15 @@ public class Projectile : MonoBehaviour
         DetectFireDistance();
     }
 
-    public void UpdateWeaponInfo(WeaponInfo weaponInfo)
+    public void UpdateProjectileRange(float projectileRange)
     {
-        this.weaponInfo = weaponInfo;
+        this.projectileRange = projectileRange; 
+
+    }
+
+    public void UpdateMoveSpeed(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed; 
 
     }
 
@@ -29,17 +36,28 @@ public class Projectile : MonoBehaviour
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         Indestructable indestructable = other.gameObject.GetComponent<Indestructable>();
+        PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
 
-        if (!other.isTrigger && (enemyHealth || indestructable))
+        if (!other.isTrigger && (enemyHealth || indestructable || player))
         {
-            Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
-            Destroy(gameObject);
+            if((player && isEnemyProjectile) || (enemyHealth && !isEnemyProjectile))
+            {
+                player?.TakeDamage(1, transform);
+                Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            else if(!other.isTrigger && indestructable)
+            {
+                Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            
         }
     }
 
     private void DetectFireDistance()
     {
-        if(Vector3.Distance(transform.position, startPosition) > weaponInfo.weaponRange)
+        if(Vector3.Distance(transform.position, startPosition) > projectileRange)
         {
             Destroy(gameObject);
         }

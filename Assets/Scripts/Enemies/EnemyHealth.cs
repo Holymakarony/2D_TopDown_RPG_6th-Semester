@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void DetectDeath()
     {
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);

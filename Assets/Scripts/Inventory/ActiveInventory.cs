@@ -24,6 +24,11 @@ public class ActiveInventory : MonoBehaviour
         playerControls.Enable();
     }
 
+    private void OnDisable()
+    {
+        playerControls?.Disable(); 
+    }
+
     private void ToggleActiveSlot(int numValue)
     {
         ToggleActiveHighlight(numValue - 1);
