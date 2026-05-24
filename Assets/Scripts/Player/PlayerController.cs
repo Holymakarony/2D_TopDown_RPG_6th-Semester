@@ -39,6 +39,8 @@ public class PlayerController : Singleton<PlayerController>
         playerControls.Combat.Dash.performed += _ => Dash();
 
         startingMoveSpeed = moveSpeed;
+
+        ActiveInventory.Instance.EquipStartingWeapon();
     }
 
     private void OnEnable()
@@ -79,7 +81,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
-        if (knockback.GettingKnockedBack)
+        if (knockback.GettingKnockedBack || PlayerHealth.Instance.IsDead)
         {
             return;
         }
@@ -106,8 +108,9 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Dash()
     {
-        if (!isDashing)
+        if (!isDashing && Stamina.Instance.CurrentStamina > 0)
         {
+            Stamina.Instance.UseStamina();
             isDashing = true;
             moveSpeed *= dashSpeed;
             myTrailRenderer.emitting = true; 

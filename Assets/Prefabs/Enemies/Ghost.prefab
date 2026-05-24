@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7058718185622276475}
   - component: {fileID: 6223095962984041405}
+  - component: {fileID: 5095978506190981941}
   - component: {fileID: 6465533161357257402}
   - component: {fileID: 3989890350962789463}
   - component: {fileID: 997107257841411134}
   - component: {fileID: 7063561417398329420}
   - component: {fileID: 8338500893400755263}
-  - component: {fileID: 5095978506190981941}
+  - component: {fileID: 5829450698729091674}
   - component: {fileID: 5386907596292019774}
   - component: {fileID: 4876375129926487302}
   - component: {fileID: 7626817131165039079}
@@ -60,6 +61,28 @@ MonoBehaviour:
   enemyType: {fileID: 5095978506190981941}
   attackCooldown: 2
   stopMovingWhileAttacking: 0
+--- !u!114 &5095978506190981941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931604942807425859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7943718270457a4ba0476917bef156b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bulletPrefab: {fileID: 3185802436843921655, guid: 2094016c9e2cb7a45b13d3a06cb93ba6, type: 3}
+  bulletMoveSpeed: 5
+  burstCount: 3
+  projectilesPerBursts: 8
+  angleSpread: 91
+  startingDistance: 0.3
+  timeBetweenBursts: 1
+  restTime: 0.5
+  stagger: 1
+  oscillate: 1
 --- !u!114 &6465533161357257402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80f1cf573c72d646aba07a8815be660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomIdleAnimation
---- !u!114 &5095978506190981941
+--- !u!114 &5829450698729091674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,19 +159,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2931604942807425859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7943718270457a4ba0476917bef156b, type: 3}
+  m_Script: {fileID: 11500000, guid: 154f4e5b1c58f50458d4c9817ebe883e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shooter
-  bulletPrefab: {fileID: 3185802436843921655, guid: 2094016c9e2cb7a45b13d3a06cb93ba6, type: 3}
-  bulletMoveSpeed: 5
-  burstCount: 3
-  projectilesPerBursts: 8
-  angleSpread: 91
-  startingDistance: 0.3
-  timeBetweenBursts: 1
-  restTime: 0.5
-  stagger: 1
-  oscillate: 1
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpSpawner
+  goldCoin: {fileID: 8665915864791484195, guid: 3664bfa1f28159c4db01093b6d8ea0e6, type: 3}
+  healthGlobe: {fileID: 8665915864791484195, guid: 06d7507d31d4c574a86949f7231c5f8b, type: 3}
+  staminaGlobe: {fileID: 8665915864791484195, guid: 6d4398233119a8e4eb9aff9167248aa1, type: 3}
 --- !u!212 &5386907596292019774
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2464592277456896246}
   - component: {fileID: 3585872277348722541}
+  - component: {fileID: 6921123114586769046}
   - component: {fileID: 7279783871289054163}
   - component: {fileID: 6102250473374522602}
   m_Layer: 0
@@ -47,6 +48,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destructable
   destroyVFX: {fileID: 6274120306154510050, guid: 2ace8d4c3d078b04ea011b8bd019d7c2, type: 3}
+--- !u!114 &6921123114586769046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091277329447075019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154f4e5b1c58f50458d4c9817ebe883e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpSpawner
+  goldCoin: {fileID: 8665915864791484195, guid: 3664bfa1f28159c4db01093b6d8ea0e6, type: 3}
+  healthGlobe: {fileID: 8665915864791484195, guid: 06d7507d31d4c574a86949f7231c5f8b, type: 3}
+  staminaGlobe: {fileID: 8665915864791484195, guid: 6d4398233119a8e4eb9aff9167248aa1, type: 3}
 --- !u!212 &7279783871289054163
 SpriteRenderer:
   m_ObjectHideFlags: 0

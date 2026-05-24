@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5303741228354064265}
   - component: {fileID: 2537280196916226567}
   - component: {fileID: 7019698209372041692}
+  - component: {fileID: 8385473121186522262}
   - component: {fileID: 3029979910123265935}
   - component: {fileID: 3611916865128783025}
   - component: {fileID: 5136552036212721245}
@@ -127,6 +128,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80f1cf573c72d646aba07a8815be660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomIdleAnimation
+--- !u!114 &8385473121186522262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950113544002557922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154f4e5b1c58f50458d4c9817ebe883e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpSpawner
+  goldCoin: {fileID: 8665915864791484195, guid: 3664bfa1f28159c4db01093b6d8ea0e6, type: 3}
+  healthGlobe: {fileID: 8665915864791484195, guid: 06d7507d31d4c574a86949f7231c5f8b, type: 3}
+  staminaGlobe: {fileID: 8665915864791484195, guid: 6d4398233119a8e4eb9aff9167248aa1, type: 3}
 --- !u!212 &3029979910123265935
 SpriteRenderer:
   m_ObjectHideFlags: 0
