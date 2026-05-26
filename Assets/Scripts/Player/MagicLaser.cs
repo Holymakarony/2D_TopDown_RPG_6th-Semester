@@ -27,6 +27,10 @@ public class MagicLaser : MonoBehaviour
         {
             isGrowing = false;
         }
+        if (collision.gameObject.GetComponent<HitTrigger>() && !collision.isTrigger && collision.gameObject.GetComponent<HitTrigger>().magicTrigger)
+        {
+            collision.gameObject.GetComponent<HitTrigger>().OnHitTrigger();
+        }
     }
 
     public void UpdateLaserRange(float laserRange)

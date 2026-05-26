@@ -37,8 +37,10 @@ public class Projectile : MonoBehaviour
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
         Indestructable indestructable = other.gameObject.GetComponent<Indestructable>();
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
+        HitTrigger hitTrigger = other.gameObject.GetComponent<HitTrigger>();
 
-        if (!other.isTrigger && (enemyHealth || indestructable || player))
+
+        if (!other.isTrigger && (enemyHealth || indestructable || player || hitTrigger))
         {
             if((player && isEnemyProjectile) || (enemyHealth && !isEnemyProjectile))
             {
@@ -48,6 +50,12 @@ public class Projectile : MonoBehaviour
             }
             else if(!other.isTrigger && indestructable)
             {
+                Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            else if(!other.isTrigger && hitTrigger && !hitTrigger.magicTrigger)
+            {
+                hitTrigger.OnHitTrigger();
                 Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
             }

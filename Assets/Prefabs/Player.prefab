@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 1676073698722150162}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +283,8 @@ MonoBehaviour:
   dashCD: 0.25
   myTrailRenderer: {fileID: 903739913831606772}
   weaponCollider: {fileID: 3870612665378059174}
+  infrontOfInteractable: 0
+  interactable: {fileID: 0}
 --- !u!114 &365146474791370766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56a29a1d0268754ca43b910aee6bb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 3
+  maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
 --- !u!114 &1075246919235730761

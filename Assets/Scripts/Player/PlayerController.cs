@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -22,6 +23,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool facingLeft = false;
     private bool isDashing = false;
+    private bool canMove = true;
+
+    public bool infrontOfInteractable = false;
+    public GameObject interactable; 
 
     protected override void Awake() 
     { 
@@ -38,9 +43,16 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerControls.Combat.Dash.performed += _ => Dash();
 
+        playerControls.Movement.Interact.performed += _ => Interact(); // remove later when functioning system implemented?
+
         startingMoveSpeed = moveSpeed;
 
         ActiveInventory.Instance.EquipStartingWeapon();
+    }
+
+    public void SetCanMove(bool bCanMove)
+    {
+        canMove = bCanMove;
     }
 
     private void OnEnable()
@@ -81,7 +93,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
-        if (knockback.GettingKnockedBack || PlayerHealth.Instance.IsDead)
+        if (knockback.GettingKnockedBack || PlayerHealth.Instance.IsDead || !canMove )
         {
             return;
         }
@@ -125,5 +137,14 @@ public class PlayerController : Singleton<PlayerController>
         myTrailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCD);
         isDashing = false;
+    }
+
+    // remove or adjust when functioning system implemented
+    private void Interact()
+    {
+        if (infrontOfInteractable && interactable)
+        {
+            interactable.GetComponent<Interactable>().Interact();
+        }
     }
 }

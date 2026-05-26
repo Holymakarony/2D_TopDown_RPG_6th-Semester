@@ -9,8 +9,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Town.unity
     guid: 80587fe3ab91bdc4aab2fead972b750c
   - enabled: 1
-    path: Assets/Scenes/Scene_1.unity
+    path: Assets/Scenes/Grass1.unity
+    guid: e1eb4e906a334ce47ba4186b60fdeb34
+  - enabled: 1
+    path: Assets/Scenes/Grass2.unity
+    guid: 8580c60825cd1b54d8026b57d103ebc8
+  - enabled: 1
+    path: Assets/Scenes/Bow.unity
+    guid: 2307938839a916440a428d48c9dc3cb8
+  - enabled: 1
+    path: Assets/Scenes/Grass3.unity
+    guid: bb0fbb0306d55da4aade004694f926d2
+  - enabled: 1
+    path: Assets/Scenes/Cave1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Staff.unity
+    guid: 6a79ab5d8a433d64db87a20816627785
+  - enabled: 1
+    path: Assets/Scenes/Cave2.unity
+    guid: b927ed6b17ba1934b9dbb26d68760f29
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 2f4be00b40b9fdc49a33c6c0e736540f
   - enabled: 1
     path: Assets/Scenes/Scene_2.unity
     guid: fc418508905b04b42ad0ac0f3b1bea24
