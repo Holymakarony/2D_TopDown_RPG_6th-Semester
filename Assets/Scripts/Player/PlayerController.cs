@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -42,13 +43,16 @@ public class PlayerController : Singleton<PlayerController>
     private void Start()
     {
         playerControls.Combat.Dash.performed += _ => Dash();
-
+        playerControls.PauseMenu.Pause.performed += _ => Pause();
         playerControls.Movement.Interact.performed += _ => Interact(); // remove later when functioning system implemented?
+
+
 
         startingMoveSpeed = moveSpeed;
 
         ActiveInventory.Instance.EquipStartingWeapon();
     }
+
 
     public void SetCanMove(bool bCanMove)
     {
@@ -120,7 +124,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Dash()
     {
-        if (!isDashing && Stamina.Instance.CurrentStamina > 0)
+        if (!isDashing && Stamina.Instance.CurrentStamina > 0 && canMove)
         {
             Stamina.Instance.UseStamina();
             isDashing = true;
@@ -146,5 +150,11 @@ public class PlayerController : Singleton<PlayerController>
         {
             interactable.GetComponent<Interactable>().Interact();
         }
+    }
+    
+    private void Pause()
+    {
+        GameObject.FindGameObjectWithTag("MenuGroup").transform.Find("PauseMenu").gameObject.SetActive(true);
+        canMove = false;
     }
 }

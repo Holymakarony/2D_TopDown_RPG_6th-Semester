@@ -42,6 +42,11 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             GetComponent<PickUpSpawner>().DropItems();
+            if (QuestManager.Instance != null)
+            {
+                string enemyType = gameObject.name;
+                QuestManager.Instance.UpdateProgress(QuestType.Kill, enemyType, 1);
+            }
             Destroy(gameObject);
         }
     }

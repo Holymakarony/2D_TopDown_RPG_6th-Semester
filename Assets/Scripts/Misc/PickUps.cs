@@ -58,6 +58,11 @@ public class PickUps : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>())
         {
             DetectPickUpType();
+            if (QuestManager.Instance != null)
+            {
+                string itemName = gameObject.name;
+                QuestManager.Instance.UpdateProgress(QuestType.Gather, itemName, 1);
+            }
             Destroy(gameObject);
         }
     }

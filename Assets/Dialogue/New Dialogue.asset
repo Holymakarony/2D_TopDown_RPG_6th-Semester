@@ -1,5 +1,115 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7618851237692682228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 4d8cd109-c841-4c78-be37-71fe533c023c
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 0
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1114
+    y: 87
+    width: 200
+    height: 100
+--- !u!114 &-5468277325285583083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: f8b0d118-79d9-4ccd-aca8-f9d5a4d5dc39
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 0
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 603
+    y: 270
+    width: 200
+    height: 100
+--- !u!114 &-3472690683194665327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 2952b3ae-c2b9-4bcb-b75a-a78f47121369
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 0
+  text: 
+  children:
+  - 94eb8507-abbb-4386-8bb4-51f0ac66affa
+  rect:
+    serializedVersion: 2
+    x: 63
+    y: 148
+    width: 200
+    height: 100
+--- !u!114 &-967339532127875364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 94eb8507-abbb-4386-8bb4-51f0ac66affa
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 1
+  text: 
+  children:
+  - d5a3eaf6-a387-4e56-b3b1-d2bf12dfce6d
+  - f8b0d118-79d9-4ccd-aca8-f9d5a4d5dc39
+  rect:
+    serializedVersion: 2
+    x: 339
+    y: 152
+    width: 200
+    height: 100
+--- !u!114 &-472899879043728935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: d5a3eaf6-a387-4e56-b3b1-d2bf12dfce6d
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 0
+  text: 
+  children:
+  - 7ad7be60-44ca-4f68-b59e-1187f08f9b2e
+  - 67970626-8ab1-471e-a108-08e6817f65c7
+  rect:
+    serializedVersion: 2
+    x: 589
+    y: 152
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11,22 +121,79 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e2996207be320642b8ca9d136073299, type: 3}
   m_Name: New Dialogue
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.Dialogue
   nodes:
-  - uniqueID: a
-    text: Hello
-    children:
-    - b
-    - c
-  - uniqueID: b
-    text: Hello, your self
-    children: []
-  - uniqueID: c
-    text: Go away!
-    children: []
-  - uniqueID: 
-    text: 
-    children: []
-  - uniqueID: 
-    text: 
-    children: []
+  - {fileID: -3472690683194665327}
+  - {fileID: -967339532127875364}
+  - {fileID: -472899879043728935}
+  - {fileID: -5468277325285583083}
+  - {fileID: 1628766877321175352}
+  - {fileID: -7618851237692682228}
+  - {fileID: 8827000314927918076}
+  - {fileID: 1478876384350447135}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1478876384350447135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 9e466ee8-806e-48be-ac4c-361107583729
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 0
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1103
+    y: 207
+    width: 200
+    height: 100
+--- !u!114 &1628766877321175352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 7ad7be60-44ca-4f68-b59e-1187f08f9b2e
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 1
+  text: 
+  children:
+  - 4d8cd109-c841-4c78-be37-71fe533c023c
+  rect:
+    serializedVersion: 2
+    x: 859
+    y: 82
+    width: 200
+    height: 100
+--- !u!114 &8827000314927918076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4777dc4b05d343b0253619359a9ab, type: 3}
+  m_Name: 67970626-8ab1-471e-a108-08e6817f65c7
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue.DialogueNode
+  isPlayerSpeaking: 1
+  text: 
+  children:
+  - 9e466ee8-806e-48be-ac4c-361107583729
+  rect:
+    serializedVersion: 2
+    x: 853
+    y: 207
+    width: 200
+    height: 100
