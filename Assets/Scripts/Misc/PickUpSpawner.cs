@@ -6,7 +6,7 @@ public class PickUpSpawner : MonoBehaviour
 
     public void DropItems()
     {
-        int randomNum = Random.Range(1, 5);
+        int randomNum = Random.Range(1, 4);
 
         if(randomNum == 1)
         {
@@ -16,7 +16,7 @@ public class PickUpSpawner : MonoBehaviour
         {
             Instantiate(staminaGlobe, transform.position, Quaternion.identity);
         }
-        if(randomNum == 3)
+        /*if(randomNum == 3)
         {
             int randomAmountOfGold = Random.Range(1, 4);
 
@@ -24,6 +24,6 @@ public class PickUpSpawner : MonoBehaviour
             {
                 Instantiate(goldCoin, transform.position, Quaternion.identity);
             }
-        }
+        }*/
     }
 }

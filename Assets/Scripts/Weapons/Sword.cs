@@ -7,6 +7,8 @@ public class Sword : MonoBehaviour, IWeapon
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private WeaponInfo weaponInfo;
     
+    public AudioClip attackSound;
+
     private Transform weaponCollider; 
     private Animator myAnimator;
     private GameObject slashAnim;
@@ -82,6 +84,15 @@ public class Sword : MonoBehaviour, IWeapon
         {
             ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);
             weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    public void PlayAttackSound()
+    {
+        print("attack");
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(attackSound, transform.position);
         }
     }
 }

@@ -22,6 +22,9 @@ public class QuestManager : MonoBehaviour
         activeQuestsProgress.Add(quest.questID, 0);
         activeQuestsData.Add(quest.questID, quest);
         Debug.Log($"Quest angenommen: {quest.questName}");
+
+        
+        RefreshUI(quest.questID);
     }
 
     // Erhöht den Fortschritt (z.B. Item aufgehoben oder Gegner besiegt)
@@ -31,6 +34,7 @@ public class QuestManager : MonoBehaviour
 
         foreach (var pair in activeQuestsData)
         {
+            // Wir prüfen, ob der Quest-Typ UND die targetID (der Name) übereinstimmen
             if (pair.Value.type == type && pair.Value.targetID == targetID)
             {
                 questsToUpdate.Add(pair.Key);
@@ -40,16 +44,9 @@ public class QuestManager : MonoBehaviour
         foreach (string questID in questsToUpdate)
         {
             activeQuestsProgress[questID] += amount;
-            QuestData data = activeQuestsData[questID];
             
-            Debug.Log($"Fortschritt für {data.questName}: {activeQuestsProgress[questID]}/{data.requiredAmount}");
-
-            // Automatischer Abschluss bei "Sprechen", wenn man den NPC triggert
-            if (type == QuestType.Talk && activeQuestsProgress[questID] >= data.requiredAmount)
-            {
-                // Kann beim Questgeber abgegeben werden
-                // Soundeffekt hier einfügen
-            }
+            // UI bei jedem Fortschritt aktualisieren
+            RefreshUI(questID);
         }
     }
 
@@ -63,13 +60,44 @@ public class QuestManager : MonoBehaviour
     }
 
     public void CompleteQuest(string questID)
+{
+    if (CanCompleteQuest(questID))
     {
-        if (CanCompleteQuest(questID))
+        activeQuestsProgress.Remove(questID);
+        activeQuestsData.Remove(questID);
+        completedQuests.Add(questID);
+        
+        // Markiere AUCH den ursprünglichen Start-Dialog als erledigt, falls nötig
+        if (DialogueSaveManager.Instance != null)
         {
-            activeQuestsProgress.Remove(questID);
-            activeQuestsData.Remove(questID);
-            completedQuests.Add(questID);
-            Debug.Log($"Quest erfolgreich beendet!");
+            DialogueSaveManager.Instance.MarkAsCompleted(questID);
+        }
+
+        Debug.Log($"Quest erfolgreich beendet!");
+
+        // Blendet das Textfeld an der Seite aus
+        if (QuestLogUI.Instance != null)
+        {
+            QuestLogUI.Instance.HideQuest();
+        }
+    }
+}
+
+
+    private void RefreshUI(string questID)
+    {
+        if (QuestLogUI.Instance != null && activeQuestsData.ContainsKey(questID))
+        {
+            QuestData data = activeQuestsData[questID];
+            int currentProgress = activeQuestsProgress[questID];
+            
+            QuestLogUI.Instance.UpdateQuestDisplay(
+                data.questName, 
+                data.description, 
+                currentProgress, 
+                data.requiredAmount,
+                data.type
+            );
         }
     }
 }

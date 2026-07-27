@@ -6,6 +6,8 @@ public class Bow : MonoBehaviour, IWeapon
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform arrowSpawnpoint;
 
+    public AudioClip attackSound;
+
     private Animator myAnimator;
 
     readonly int FIRE_HASH = Animator.StringToHash("Fire"); // effizienter als wenn Unity jedes mal den String im Animator suchen muss
@@ -25,5 +27,13 @@ public class Bow : MonoBehaviour, IWeapon
     public WeaponInfo GetWeaponInfo()
     {
         return weaponInfo;
+    }
+
+    public void PlayAttackSound()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(attackSound, transform.position);
+        }
     }
 }

@@ -52,6 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   moveSpeed: 22
   particleOnHitPrefabVFX: {fileID: 5829997151769627827, guid: 86fc20e1bec401846b9046dd65099cf1, type: 3}
+  isEnemyProjectile: 0
+  projectileRange: 10
 --- !u!114 &3953603319866181580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e0753ef6c10e3545a1f4b0070b0247f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d75731b5f5e4dc4f9cb16247d416416, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

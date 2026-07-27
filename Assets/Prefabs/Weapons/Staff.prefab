@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 757e0271167fb4d49a38499cb9524c5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc11d8521f31164408358cf580f29cc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   weaponInfo: {fileID: 11400000, guid: 6b49154f0281cf34daa56121ffda39ba, type: 2}
   magicLaser: {fileID: 2729174088169180649, guid: f66bce97228455b4a8be8f334743e2ca, type: 3}
   magicLaserSpawnPoint: {fileID: 6645137339453891216}
+  attackSound: {fileID: 8300000, guid: 5d6c8ea12a5f53d4781816cd96728314, type: 3}
 --- !u!212 &1103190976342907117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 94aa5f4853bb41d4bad33782f2cc7850, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6da06dfb9f2c17b4788ba2fa545abbb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

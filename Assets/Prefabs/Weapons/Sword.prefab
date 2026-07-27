@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sword
   slashAnimSpawnPoint: {fileID: 0}
   slashAnimPrefab: {fileID: 3724374439523961240, guid: 4de30aabc6ecf294da191cd4a27e4a86, type: 3}
-  swordAttackCD: 0.5
   weaponInfo: {fileID: 11400000, guid: a746daa9c804573429a14ae903898394, type: 2}
+  attackSound: {fileID: 8300000, guid: 4c2f027b9fc644443b6cb7887575241d, type: 3}
 --- !u!212 &5022015629972013483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e09292d57a6a0524783626d67b336449, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 709f8f4f1615dec4e9477ffba0ff07f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

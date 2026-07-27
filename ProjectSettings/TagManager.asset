@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PauseMenu
   - MenuGroup
+  - Inventory
+  - MainMenu
   layers:
   - Default
   - TransparentFX

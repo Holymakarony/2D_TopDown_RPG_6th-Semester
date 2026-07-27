@@ -283,6 +283,11 @@ MonoBehaviour:
   dashCD: 0.25
   myTrailRenderer: {fileID: 903739913831606772}
   weaponCollider: {fileID: 3870612665378059174}
+  footstepSounds:
+  - {fileID: 8300000, guid: 98168a4b10b29bb40a98f55daec8a74d, type: 3}
+  - {fileID: 8300000, guid: eeafe1f0c18b06f41b7f03bf43a41fa6, type: 3}
+  - {fileID: 8300000, guid: aac33db080ac29c449ab00f33d8aba5c, type: 3}
+  canMove: 1
   infrontOfInteractable: 0
   interactable: {fileID: 0}
 --- !u!114 &365146474791370766
@@ -339,8 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cedd0c06d2934846b0b3970d7b1d096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stamina
-  fullStaminaImage: {fileID: 21300000, guid: 5c6fea2a8d37cdc4480328bcf0d7c20c, type: 3}
-  emptyStaminaImage: {fileID: 21300000, guid: 47000811298e73e4f889e9df0c047742, type: 3}
+  fullStaminaImage: {fileID: 21300000, guid: 3b380297fa8ee884d86aebd2ef0e5be2, type: 3}
+  emptyStaminaImage: {fileID: 21300000, guid: 3c382c98976e72248b7b9bf752537f8f, type: 3}
   timeBetweenStaminaRefresh: 3
 --- !u!212 &249041319886023248
 SpriteRenderer:

@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player");
-        playerController.GetComponent<PlayerController>().SetCanMove(false);
 
         StartButton.onClick.AddListener(OnStartClicked);
         CreditsButton.onClick.AddListener(OnCreditsClicked);

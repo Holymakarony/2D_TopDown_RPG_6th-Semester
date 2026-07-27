@@ -26,46 +26,43 @@ public class DialogueTrigger : MonoBehaviour
     // Bestimmt, welcher Dialog basierend auf dem Quest-Status geladen werden muss
     void UpdateDialogueState()
     {
-        if (DialogueSaveManager.Instance != null && DialogueSaveManager.Instance.IsDialogueCompleted(dialogueID))
-        {
-            isAlreadyCompleted = true;
-        }
+        // Standard-Zustand zurücksetzen
+        isAlreadyCompleted = false; 
+        currentActiveDialogue = dialogue;
 
-        currentActiveDialogue = dialogue; // Standard
-
+        // 1. Priorität: Gibt es eine Quest, und können wir sie abgeben?
         if (associatedQuest != null && QuestManager.Instance != null)
         {
             string qID = associatedQuest.questID;
 
             if (QuestManager.Instance.IsQuestCompleted(qID))
             {
-                isAlreadyCompleted = true; // NPC hat nichts mehr zu sagen
+                isAlreadyCompleted = true; // Quest komplett fertig -> NPC schweigt
             }
             else if (QuestManager.Instance.CanCompleteQuest(qID))
             {
-                currentActiveDialogue = associatedQuest.questCompletedDialogue;
-                isAlreadyCompleted = false; // Muss für die Abgabe wieder sprechbar sein
+                currentActiveDialogue = associatedQuest.questCompletedDialogue; // Genug Gold gesammelt!
+                isAlreadyCompleted = false; // Wichtig: NICHT sperren, da wir sprechen wollen!
             }
             else if (QuestManager.Instance.IsQuestActive(qID))
             {
-                currentActiveDialogue = associatedQuest.questIncompleteDialogue;
+                currentActiveDialogue = associatedQuest.questIncompleteDialogue; // Noch nicht genug Gold
                 isAlreadyCompleted = false;
-
-                // Falls es eine "Spreche mit jemandem"-Quest ist und DIESER NPC das Ziel ist:
-                if (associatedQuest.type == QuestType.Talk && associatedQuest.targetID == dialogueID)
-                {
-                    QuestManager.Instance.UpdateProgress(QuestType.Talk, dialogueID, 1);
-                }
             }
             else
             {
-                // Quest wurde noch nicht angenommen -> Spiele den Dialog, der die Quest startet
-                currentActiveDialogue = associatedQuest.questAcceptedDialogue;
+                currentActiveDialogue = associatedQuest.questAcceptedDialogue; // Erstkontakt / Quest annehmen
             }
+        }
+        // 2. Priorität: Wenn KEINE Quest verknüpft ist, greift der normale DialogueSaveManager
+        else if (DialogueSaveManager.Instance != null && DialogueSaveManager.Instance.IsDialogueCompleted(dialogueID))
+        {
+            isAlreadyCompleted = true;
         }
 
         if (interactionIndicator != null) interactionIndicator.SetActive(false);
     }
+
 
     void Update()
     {
@@ -86,6 +83,8 @@ public class DialogueTrigger : MonoBehaviour
                 }
                 else
                 {
+                    UpdateDialogueState(); 
+                    
                     if (interactionIndicator != null) interactionIndicator.SetActive(false);
                     manager.StartDialogue(currentActiveDialogue, dialogueID);
                 }

@@ -81,6 +81,7 @@ MonoBehaviour:
   weaponInfo: {fileID: 11400000, guid: 7e05afbd5db7b0e4ea893e9202e87376, type: 2}
   arrowPrefab: {fileID: 7698952149200196739, guid: 97a843b09b0a338418517da8807b622d, type: 3}
   arrowSpawnpoint: {fileID: 1043159860870021108}
+  attackSound: {fileID: 8300000, guid: b58dbcdcbb771624788edc41c5fad777, type: 3}
 --- !u!212 &4264331373180110954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02f23023a76ffc448ba528498ea70f0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78ea1e1c182e0484eb6b109f5776a587, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

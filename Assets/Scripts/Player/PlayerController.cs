@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -13,6 +12,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float dashCD = 0.25f; 
     [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private Transform weaponCollider;
+    public AudioClip[] footstepSounds;
     
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -24,7 +24,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool facingLeft = false;
     private bool isDashing = false;
-    private bool canMove = true;
+    [SerializeField] private bool canMove = true;
 
     public bool infrontOfInteractable = false;
     public GameObject interactable; 
@@ -53,6 +53,14 @@ public class PlayerController : Singleton<PlayerController>
         ActiveInventory.Instance.EquipStartingWeapon();
     }
 
+    public void PlayFootstep()
+    {
+        if (footstepSounds.Length == 0 || AudioManager.Instance == null) return;
+        
+        // Zufälligen Schrittsound auswählen
+        AudioClip randomStep = footstepSounds[UnityEngine.Random.Range(0, footstepSounds.Length)];
+        AudioManager.Instance.PlaySFX(randomStep, transform.position, 0.6f); // 0.6f für etwas leisere Schritte
+    }
 
     public void SetCanMove(bool bCanMove)
     {

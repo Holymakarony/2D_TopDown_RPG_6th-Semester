@@ -12,4 +12,11 @@ public class HitTrigger : MonoBehaviour
     {
         TriggerEvent.Invoke();
     }
+
+    public void BackToMainMenu()
+    {
+        // "Canvas" muss aktiv sein. "DialoguePanel" kann deaktiviert sein.
+        GameObject mainMenu = GameObject.Find("UI_Canvas").transform.Find("MainMenu").gameObject;
+        mainMenu.SetActive(true);
+    }
 }

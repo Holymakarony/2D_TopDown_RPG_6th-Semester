@@ -5,6 +5,8 @@ public class Staff : MonoBehaviour, IWeapon
     [SerializeField] private WeaponInfo weaponInfo;
     [SerializeField] private GameObject magicLaser;
     [SerializeField] private Transform magicLaserSpawnPoint;
+
+    public AudioClip attackSound;
     
     private Animator myAnimator;
 
@@ -51,6 +53,14 @@ public class Staff : MonoBehaviour, IWeapon
         else
         {
             ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
+    public void PlayAttackSound()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(attackSound, transform.position);
         }
     }
 }
